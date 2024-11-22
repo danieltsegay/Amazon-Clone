@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './Header.module.css'
+import { Link } from 'react-router-dom';
 import LowerHeader from './LowerHeader';
 import { BsSearch } from "react-icons/bs";
 import { SlLocationPin } from "react-icons/sl";
@@ -13,10 +14,10 @@ function Header() {
         <section className={classes.header__container}>
             {/* Logo */}
             <div className={classes.logo__container}>
-            <a to="/">
+            <Link to="/">
                 <img src='https://pngimg.com/uploads/amazon/amazon_PNG11.png' alt="amazon logo" />{" "}
                 {/* Amazon logo with a to homepage */}
-            </a>
+            </Link>
 
             {/* Delivery location */}
             <div className={classes.delivery}>
@@ -61,7 +62,7 @@ function Header() {
             {/* Right-side as (Account, Orders, Cart) */}
             <div className={classes.order__container}>
             {/* Language Selector */}
-            <a href="" className={classes.language}>
+            <Link to="" className={classes.language}>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg"
                 alt="USA Flag"
@@ -69,30 +70,28 @@ function Header() {
                 <select>
                 <option>EN</option> {/* Static language option */}
                 </select>
-            </a>
+            </Link>
 
              {/* Sign In / Sign Out */}
-             <a to="/auth">
+             <Link to="/auth">
               <div>
-                
                   <>
                     <p>Hello, Sign In</p> {/* If no user, show Sign In */}
                     <span>Account & Lists</span>
                   </>
               </div>
-            </a>
-
+              </Link>
             {/* Orders */}
-            <a to="/orders">
+            <Link to="/orders">
                 <p>returns</p>
                 <span>& Orders</span> {/* a to user's orders */}
-            </a>
+            </Link>
 
             {/* Cart */}
-            <a to="/cart" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
                 <BiCart size={35} /> {/* Cart icon */}
                 {/* <span>{totalItem}</span> Display total items in cart */}
-            </a>
+            </Link>
             </div>
             
         </section>
